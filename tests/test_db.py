@@ -9,7 +9,3 @@ class TestDB(unittest.TestCase):
     def test_parse_migration_file(self):
         # Check if the parser is working correctly
         raise NotImplementedError
-
-
-if __name__ == '__main__':
-    unittest.main()
