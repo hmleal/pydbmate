@@ -8,6 +8,13 @@ setup(
     version='0.0.1.dev0',
     description='Another python migration tool',
     packages=['pydbmate'],
+    classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3.6',
+    ],
     license='MIT',
     entry_points={'console_scripts': [
         'pydbmate = pydbmate.__main__:main',

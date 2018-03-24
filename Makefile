@@ -3,3 +3,7 @@ help:
 
 test:
 	@pytest
+
+clean:
+	@rm -Rf build/
+	@rm -Rf dist/
