@@ -3,17 +3,11 @@ import re
 
 from datetime import datetime
 
-
-DATABASE_URL = ''
-DEFAULT_MIGRATION_DIR = './db/migrations'
-MIGRATION_TEMPLATE = '-- migrate: up\n\n\n-- migrate: down\n\n'
+from pydbmate import settings
 
 
-def ensure_dir(default_migration_dir=DEFAULT_MIGRATION_DIR):
-    if os.path.exists(default_migration_dir):
-        return
-
-    os.makedirs(default_migration_dir)
+def ensure_dir():
+    os.makedirs(settings.PYDBMATE_BASE_DIR, exist_ok=True)
 
 
 def new_migration(name: str):
@@ -21,10 +15,10 @@ def new_migration(name: str):
     ensure_dir()
 
     filename = generate_migration_file_name(name)
-    filepath = os.path.join(DEFAULT_MIGRATION_DIR, filename)
+    filepath = os.path.join(settings.PYDBMATE_BASE_DIR, filename)
 
     with open(filepath, 'w+') as f:
-        f.write(MIGRATION_TEMPLATE)
+        f.write(settings.MIGRATION_TEMPLATE)
 
 
 def generate_migration_file_name(suffix: str):
@@ -45,5 +39,3 @@ def parse_migration_file(filename: str):
             migrations.append(migration.strip())
 
     return migrations
-
-# separatorRegexp := regexp.MustCompile(`(?m)^-- migrate:(.*)$`)

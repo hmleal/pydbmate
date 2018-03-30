@@ -7,12 +7,10 @@ name = "pypi"
 
 [packages]
 
-requests = "*"
+docopt = "*"
 
 
 [dev-packages]
-
-black = "*"
 
 
 [requires]

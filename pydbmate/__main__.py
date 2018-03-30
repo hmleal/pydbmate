@@ -12,18 +12,17 @@ Options:
 """
 from docopt import docopt
 
-from pydbmate import db
+from pydbmate import core
 
 
 def main(args=None):
     args = docopt(__doc__, version='Pydbmate')
 
     if args['new']:
-        db.new_migration(args['<filename>'])
+        core.new_migration(args['<filename>'])
 
     if args['migrate']:
         pass
-        # db.parse_migration_file('filename.sql')
 
 
 if __name__ == '__main__':

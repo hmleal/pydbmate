@@ -2,7 +2,7 @@ help:
 	@echo 'Makefile for pydbmate project'
 
 test:
-	@pytest
+	@PYDBMATE_BASE_DIR="/tmp/db/migrations" pytest
 
 clean:
 	@rm -Rf build/

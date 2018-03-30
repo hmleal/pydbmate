@@ -16,7 +16,5 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     license='MIT',
-    entry_points={'console_scripts': [
-        'pydbmate = pydbmate.__main__:main',
-    ]},
+    entry_points={'console_scripts': ['pydbmate = pydbmate.__main__:main']},
 )
