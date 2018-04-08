@@ -28,7 +28,7 @@ def generate_migration_file_name(suffix: str):
 
 
 def parse_migration_file(filename: str):
-    filepath = os.path.join(DEFAULT_MIGRATION_DIR, filename)
+    filepath = os.path.join(settings.PYDBMATE_BASE_DIR, filename)
 
     with open(filepath, 'r') as f:
         data = f.read()

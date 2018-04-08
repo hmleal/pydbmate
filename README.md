@@ -26,7 +26,9 @@ pydbmate roolback   # roll back the most recent migration
 
 ### TODO
 
-- [ ] Create the project structure
-- [ ] Set up Travis CI
-- [ ] Generate a function to create new migration files
-- [ ] Generate a function to parser migration file
+- [ ] Install and setup the sqlalchemy
+- [ ] Install and setup the terminaltables
+- [X] Create the project structure
+- [X] Set up Travis CI
+- [X] Generate a function to create new migration files
+- [X] Generate a function to parser migration file

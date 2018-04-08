@@ -1,10 +1,11 @@
 """Pydbmate
 
 Usage:
-  main.py new <filename>
-  main.py migrate
-  main.py (-h | --help)
-  main.py --version
+  pydbmate new <filename>
+  pydbmate migrate
+  pydbmate status
+  pydbmate (-h | --help)
+  pydbmate --version
 
 Options:
   -h --help     Show this screen.
@@ -22,7 +23,12 @@ def main(args=None):
         core.new_migration(args['<filename>'])
 
     if args['migrate']:
-        pass
+        migrations = core.parse_migration_file()
+        for m in migrations:
+            print(m)
+
+    if args['migrate']:
+        raise NotImplementedError
 
 
 if __name__ == '__main__':
