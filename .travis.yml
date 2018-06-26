@@ -6,3 +6,6 @@ python:
 install: "pip install -r requirements_dev.txt"
 
 script: make test
+
+notifications:
+    email: false
