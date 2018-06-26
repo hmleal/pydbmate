@@ -1,9 +1,10 @@
 from sqlalchemy import create_engine
+from pydbmate import settings
 
 # from pydbmate.settings import DB_URI
 
 
-engine = create_engine("sqlite:///db.sqlite3", echo=True)
+engine = create_engine(settings.DATABASE_URL, echo=True)
 
 # Base.metadata.create_all(engine)
 

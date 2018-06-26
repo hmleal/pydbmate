@@ -17,12 +17,12 @@ def new_migration(name: str):
     filename = generate_migration_file_name(name)
     filepath = os.path.join(settings.PYDBMATE_BASE_DIR, filename)
 
-    with open(filepath, 'w+') as f:
+    with open(filepath, "w+") as f:
         f.write(settings.MIGRATION_TEMPLATE)
 
 
 def generate_migration_file_name(suffix: str):
-    pattern = '{:%Y%m%d_%H%M}_{}.sql'
+    pattern = "{:%Y%m%d_%H%M}_{}.sql"
 
     return pattern.format(datetime.now(), suffix)
 
@@ -30,11 +30,11 @@ def generate_migration_file_name(suffix: str):
 def parse_migration_file(filename: str):
     filepath = os.path.join(settings.PYDBMATE_BASE_DIR, filename)
 
-    with open(filepath, 'r') as f:
+    with open(filepath, "r") as f:
         data = f.read()
 
     migrations = []
-    for migration in re.split('^-- migrate: (?:up|down)\n', data, flags=re.MULTILINE):
+    for migration in re.split("^-- migrate: (?:up|down)\n", data, flags=re.MULTILINE):
         if migration:
             migrations.append(migration.strip())
 

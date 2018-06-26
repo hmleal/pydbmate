@@ -17,19 +17,19 @@ from pydbmate import core
 
 
 def main(args=None):
-    args = docopt(__doc__, version='Pydbmate')
+    args = docopt(__doc__, version="Pydbmate")
 
-    if args['new']:
-        core.new_migration(args['<filename>'])
+    if args["new"]:
+        core.new_migration(args["<filename>"])
 
-    if args['migrate']:
+    if args["migrate"]:
         migrations = core.parse_migration_file()
         for m in migrations:
             print(m)
 
-    if args['migrate']:
+    if args["migrate"]:
         raise NotImplementedError
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
